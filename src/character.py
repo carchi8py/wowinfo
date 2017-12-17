@@ -9,6 +9,11 @@ class Character:
         self.locale = locale
 
     def getCharaterInfo(self):
+        """
+        Get all the information about a Character
+
+        :return:
+        """
         url = "https://" + self.locale + \
             ".api.battle.net/wow/character/" + self.realm + "/" + self.name + \
               "?fields=items,quests,achievements,audit,progression,feed,professions,talents&?locale=en_US&apikey=" + \
