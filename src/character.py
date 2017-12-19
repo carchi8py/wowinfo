@@ -18,4 +18,4 @@ class Character:
             ".api.battle.net/wow/character/" + self.realm + "/" + self.name + \
               "?fields=items,quests,achievements,audit,progression,feed,professions,talents&?locale=en_US&apikey=" + \
         apikey.key
-        return requests.get(url)
+        return requests.get(url).text
