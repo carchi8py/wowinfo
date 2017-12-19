@@ -8,7 +8,7 @@ class Character:
         self.name = name
         self.locale = locale
 
-    def getCharaterInfo(self):
+    def get_player(self):
         """
         Get all the information about a Character
 

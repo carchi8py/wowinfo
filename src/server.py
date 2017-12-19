@@ -7,7 +7,7 @@ class Server:
         self.connected_realm_id = connected_realm_id
         self.locale = locale
 
-    def get_current_leader_boards(self):
+    def get_current_leaderboards(self):
         """
         Get the list of all current leader boards for each dungeon
         
