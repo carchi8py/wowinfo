@@ -30,14 +30,18 @@ class Server:
 
 
     def does_server_exists(self, realm_name):
-        if not db.session.query(exists().where(Server_DB.name == realm_name)).scalar():
+        if db.session.query(exists().where(Server_DB.name == realm_name)).scalar():
             return False
         return True
 
     def add_server_to_db(self, realm_name):
+        print("Adding realm: %s" % realm_name)
         new_server = Server_DB(name = realm_name)
         db.session.add(new_server)
         db.session.commit()
+
+    def get_server(self, realm_name):
+        return db.session.query(Server_DB).filter_by(name = realm_name).first()
 
 
 

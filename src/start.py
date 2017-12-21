@@ -4,6 +4,7 @@ import parsers.mythic as mythic
 import sys
 
 server = Server("1171", "us")
+charaters = {}
 leaderboards = server.get_current_leaderboards()
 dungeons = mythic.parse_leaderboards(leaderboards)
 for dungeon in dungeons:
@@ -18,4 +19,8 @@ for dungeon in dungeons:
             character_name = memeber["profile"]["name"]
             realm_name = memeber["profile"]["realm"]["slug"]
             server.add_server(realm_name)
-            sys.exit(1)
+            if not character_name + "-" + realm_name in charaters:
+                #TODO replace us with the vaule in side the json file
+                new_charater = Character(realm_name, character_name, "us")
+                new_charater.add_character()
+                charaters[character_name + "-" + realm_name] = new_charater
