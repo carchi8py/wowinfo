@@ -15,6 +15,7 @@ for dungeon in dungeons:
         level = group["keystone_level"]
         memebers = group["members"]
         for memeber in memebers:
-            #print(memeber["profile"])
-            if memeber["profile"]["name"] == "Pyroblast":
-                print("W00t")
+            character_name = memeber["profile"]["name"]
+            realm_name = memeber["profile"]["realm"]["slug"]
+            server.add_server(realm_name)
+            sys.exit(1)
