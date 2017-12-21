@@ -1,6 +1,7 @@
 import json
 import requests
 import apikey
+import sys
 
 def parse_leaderboards(leaderboards):
     """
@@ -25,4 +26,7 @@ def get_dungeon_leaderboard(dungeon):
     dungeon = dungeon.split('"')[1]
     dungeon_leaderboard = requests.get(dungeon + "&access_token=" + apikey.access).text
     dungeon_leaderboard = json.loads(dungeon_leaderboard)
-    return dungeon_leaderboard["leading_groups"]
+    return dungeon_leaderboard
+
+def get_dungeon_name(dungeon_leaderboard):
+    return dungeon_leaderboard["map"]
