@@ -1,0 +1,11 @@
+<html>
+<body>
+{% for group in groups %}
+    {{group.id}} {{group.duration}} {{group.level}}
+    {% for each in group.characters %}
+        {{each.name}}
+    {% endfor %}
+    <br>
+{% endfor %}
+</body>
+</html>

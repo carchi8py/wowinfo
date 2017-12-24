@@ -15,6 +15,11 @@ session = DBSession()
 def charaters():
     charaters = session.query(Character_DB).order_by(Character_DB.name)
     return render_template('charaters.html', charaters=charaters)
+@app.route('/groups/')
+def group():
+    groups = session.query(Group_DB).order_by(Group_DB.level)
+    return render_template('groups.html', groups=groups)
+
 
 if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
