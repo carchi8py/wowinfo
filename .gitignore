@@ -105,3 +105,6 @@ ENV/
 
 # Wowkeys, so they don't get pushed to github
 apikey.py
+
+#ignore sonar files
+.scannerwork/
