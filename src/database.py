@@ -24,6 +24,8 @@ class Character_DB(Base):
 class Group_DB(Base):
     __tablename__ = "group"
     id = Column(Integer, primary_key=True)
+    duration = Column(Integer)
+    level = Column(Integer)
     characters = relationship("Character_DB",
                              secondary=association_table,
                              back_populates="groups")

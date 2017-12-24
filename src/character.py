@@ -26,15 +26,14 @@ class Character:
         return requests.get(url).text
 
     def add_character(self):
-        if self.does_charater_exists():
+        if not self.does_charater_exists():
             self.add_character_to_db()
 
     def does_charater_exists(self):
-        if db.session.query(exists().where(Character_DB.name == self.name)).scalar():
-            for char in db.session.query(Server_DB).filter_by(name = self.name):
-                if char.server.name == self.realm:
-                    return False
-        return True
+        for char in db.session.query(Server_DB).filter_by(name = self.name):
+            if char.server.name == self.realm:
+                return True
+            return False
 
     def add_character_to_db(self):
         print("Adding charater: %s from realm: %s" % (self.name, self.realm))
