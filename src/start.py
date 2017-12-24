@@ -3,6 +3,7 @@ from server import Server
 import parsers.mythic as mythic
 import sys
 
+#TODO tie in this server class, with the servers we are finding below
 server = Server("1171", "us")
 charaters = {}
 leaderboards = server.get_current_leaderboards()

@@ -18,5 +18,9 @@ class Server_DB(Base):
     name = Column(String(128), nullable=False)
     characters = relationship("Character_DB", back_populates="server")
 
+class Group_DB(Base):
+    __tablename__ = "group"
+    id = Column(Integer, primary_key=True)
+
 engine = create_engine('sqlite:///db.db')
 Base.metadata.create_all(engine)
