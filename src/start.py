@@ -1,5 +1,6 @@
 from character import Character
 from server import Server
+from group import Group
 import parsers.mythic as mythic
 import sys
 
@@ -15,6 +16,8 @@ for dungeon in dungeons:
     for group in leading_groups:
         duration = group["duration"]
         level = group["keystone_level"]
+        new_group = Group(duration, level)
+        new_group.add_group()
         memebers = group["members"]
         for memeber in memebers:
             character_name = memeber["profile"]["name"]
