@@ -28,3 +28,4 @@ for dungeon in dungeons:
                 new_charater = Character(realm_name, character_name, "us")
                 new_charater.add_character()
                 charaters[character_name + "-" + realm_name] = new_charater
+            new_group.add_charater_to_group(charaters[character_name + '-' + realm_name])

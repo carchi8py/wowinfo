@@ -36,6 +36,13 @@ class Character:
                 return True
         return False
 
+    def get_charater(self):
+        for char in db.session.query(Character_DB).filter_by(name = self.name):
+            if char.server.name == self.realm:
+                return char
+        return None
+
+
     def add_character_to_db(self):
         print("Adding charater: %s from realm: %s" % (self.name, self.realm))
         server_obj = db.session.query(Server_DB).filter_by(name = self.realm).first()
