@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, Date, Time
+from sqlalchemy import Column, ForeignKey, Integer, String, Date, Time, DECIMAL
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine, Table
@@ -26,6 +26,7 @@ class Group_DB(Base):
     id = Column(Integer, primary_key=True)
     duration = Column(Integer)
     level = Column(Integer)
+    score = Column(DECIMAL)
     characters = relationship("Character_DB",
                              secondary=association_table,
                              back_populates="groups")

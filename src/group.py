@@ -32,7 +32,7 @@ class Group:
 
     def add_group_to_db(self):
         print("Adding Group with %s on level %s" % (str(self.duration), str(self.level)))
-        new_group = Group_DB(duration = self.duration, level = self.level)
+        new_group = Group_DB(duration = self.duration, level = self.level, score = self.level * 10)
         db.session.add(new_group)
         db.session.commit()
 
