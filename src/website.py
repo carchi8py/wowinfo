@@ -17,7 +17,7 @@ def charaters():
     return render_template('charaters.html', charaters=charaters)
 @app.route('/groups/')
 def group():
-    groups = session.query(Group_DB).order_by(Group_DB.level)
+    groups = session.query(Group_DB).order_by(Group_DB.score.desc())
     return render_template('groups.html', groups=groups)
 
 

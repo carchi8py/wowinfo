@@ -1,11 +1,26 @@
 <html>
 <body>
-{% for group in groups %}
-    {{group.id}} {{group.duration}} {{group.level}}
-    {% for each in group.characters %}
-        {{each.name}}
-    {% endfor %}
-    <br>
-{% endfor %}
+    <table border="1">
+        <tr>
+            <th>Group ID</th>
+            <th>Time</th>
+            <th>Mythic Level</th>
+            <th>Score</th>
+            <th>Players</th>
+        </tr>
+        {% for group in groups %}
+        <tr>
+            <td>{{group.id}}</td>
+            <td>{{group.duration}}</td>
+            <td>{{group.level}}</td>
+            <td>{{group.score}}</td>
+            <td>
+            {% for each in group.characters %}
+                {{each.name}}
+            {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
