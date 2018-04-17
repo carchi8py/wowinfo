@@ -24,7 +24,7 @@ class Group:
         return False
 
     def get_group(self):
-    if db.session.query(exists().where(Group_DB.duration == self.duration)).scalar():
+        if db.session.query(exists().where(Group_DB.duration == self.duration)).scalar():
             for group in db.session.query(Group_DB).filter_by(duration = self.duration):
                 if group.level == self.level:
                     return group

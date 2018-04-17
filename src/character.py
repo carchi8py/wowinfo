@@ -9,9 +9,11 @@ from database import Base, Character_DB, Server_DB
 import db
 
 class Character:
-    def __init__(self, realm, name, locale):
+    def __init__(self, realm, name, faction, player_spec, locale):
         self.realm = realm
         self.name = name
+        self.faction = faction
+        self.player_spec = player_spec
         self.locale = locale
 
     def get_player(self):
@@ -46,6 +48,6 @@ class Character:
     def add_character_to_db(self):
         print("Adding charater: %s from realm: %s" % (self.name, self.realm))
         server_obj = db.session.query(Server_DB).filter_by(name = self.realm).first()
-        new_character = Character_DB(name = self.name, server = server_obj)
+        new_character = Character_DB(name = self.name, server = server_obj, faction = self.faction, player_spec = self.player_spec)
         db.session.add(new_character)
         db.session.commit()

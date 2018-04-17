@@ -8,6 +8,7 @@ import sys
 server = Server("1171", "us")
 charaters = {}
 leaderboards = server.get_current_leaderboards()
+print(leaderboards)
 dungeons = mythic.parse_leaderboards(leaderboards)
 for dungeon in dungeons:
     dungeon_leaderboard = mythic.get_dungeon_leaderboard(dungeon)
@@ -22,10 +23,12 @@ for dungeon in dungeons:
         for memeber in memebers:
             character_name = memeber["profile"]["name"]
             realm_name = memeber["profile"]["realm"]["slug"]
+            faction = memeber["faction"]["type"]
+            player_spec = memeber["specialization"]["id"]
             server.add_server(realm_name)
             if not character_name + "-" + realm_name in charaters:
                 #TODO replace us with the vaule in side the json file
-                new_charater = Character(realm_name, character_name, "us")
+                new_charater = Character(realm_name, character_name, faction, player_spec, "us")
                 new_charater.add_character()
                 charaters[character_name + "-" + realm_name] = new_charater
             new_group.add_charater_to_group(charaters[character_name + '-' + realm_name])

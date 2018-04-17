@@ -17,6 +17,8 @@ class Character_DB(Base):
     name = Column(String(128), nullable=False)
     server_id = Column(Integer, ForeignKey('server.id'))
     server = relationship("Server_DB", back_populates="characters")
+    player_spec = Column(String(128))
+    faction = Column(String(128))
     groups = relationship("Group_DB",
                           secondary=association_table,
                           back_populates="characters")
