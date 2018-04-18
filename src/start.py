@@ -8,7 +8,6 @@ import sys
 server = Server("1171", "us")
 charaters = {}
 leaderboards = server.get_current_leaderboards()
-print(leaderboards)
 dungeons = mythic.parse_leaderboards(leaderboards)
 for dungeon in dungeons:
     dungeon_leaderboard = mythic.get_dungeon_leaderboard(dungeon)

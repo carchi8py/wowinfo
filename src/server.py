@@ -21,7 +21,6 @@ class Server:
         url = "https://" + self.locale + \
               ".api.battle.net/data/wow/connected-realm/" + self.connected_realm_id + \
               "/mythic-leaderboard/?namespace=dynamic-us&locale=en_US&access_token=" + apikey.access
-        print(url)
         return requests.get(url).text
 
     def add_server(self, realm_name):
