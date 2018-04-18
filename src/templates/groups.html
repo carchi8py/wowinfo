@@ -2,6 +2,59 @@
 <html>
 <head>
     <title>Groups</title>
+    <style>
+
+        body { background-color: black; color:white;}
+        .c62 { color:#69ccf0;}
+        .c63 { color:#69ccf0;}
+        .c64 { color:#69ccf0;}
+
+        .c65 { color:#f58cba;}
+        .c66 { color:#f58cba;}
+        .c70 { color:#f58cba;}
+
+        .c65 { color:#c79c6e;}
+        .c66 { color:#c79c6e;}
+        .c70 { color:#c79c6e;}
+
+        .c102 { color:#ff7d0a;}
+        .c103 { color:#ff7d0a;}
+        .c104 { color:#ff7d0a;}
+        .c105 { color:#ff7d0a;}
+
+        .c250 { color:#c41f3b;}
+        .c251 { color:#c41f3b;}
+        .c252 { color:#c41f3b;}
+
+        .c253 { color:#abd473;}
+        .c254 { color:#abd473;}
+        .c255 { color:#abd473;}
+
+        .c256 { color:#fff;}
+        .c257 { color:#fff;}
+        .c258 { color:#fff;}
+
+        .c259 { color:#fff569;}
+        .c260 { color:#fff569;}
+        .c261 { color:#fff569;}
+
+        .c262 { color:#0070de;}
+        .c263 { color:#0070de;}
+        .c264 { color:#0070de;}
+
+        .c265 { color:#9482c9;}
+        .c266 { color:#9482c9;}
+        .c267 { color:#9482c9;}
+
+        .c268 { color:#00ff96;}
+        .c269 { color:#00ff96;}
+        .c270 { color:#00ff96;}
+
+        .c577 { color:#a330c9;}
+        .c581 { color:#a330c9;}
+
+
+    </style>
 </head>
 <body>
     <table border="1">
@@ -20,7 +73,7 @@
             <td>{{group.score}}</td>
             <td>
             {% for each in group.characters %}
-                {{each.name}}
+                <a class="c{{each.player_spec}}" herf="google.com">{{each.name}}</a>
             {% endfor %}
             </td>
         </tr>
